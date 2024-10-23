@@ -1,8 +1,11 @@
-use add::add;
+
+fn multiply(x: &i32, y: &i32) -> i32 {
+    x * y
+}
 
 fn main() {
-    let x = 1;
-    let y = 500;
-    let z = add(&x, &y);
-    println!("The addition of {} and {} is {}", x, y, z);
+    let a = 10;
+    let b = 20;
+    let result = multiply(&a, &b);
+    println!("The multiplication of {} and {} is {}", a, b, result);
 }
