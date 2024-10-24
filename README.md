@@ -34,6 +34,6 @@ cargo --version
 ```
 ## Download the Binary
 
-To download the latest compiled binary of the tool, visit the [GitHub Actions page](https://github.com/ericiortega/Eric_Ortega_Rodriguez_Mini_Project_7/actions/runs/1234567890) for the latest successful build and download the artifact named `Eric_Ortega_Rodriguez_Mini_Project_7`.
+To download the latest compiled binary of the tool, you can visit the [GitHub Actions page](https://github.com/nogibjj/Eric_Ortega_Rodriguez_Mini_Project_7/actions/runs/11491847837) for the latest successful build and download the artifact named `Eric_Ortega_Rodriguez_Mini_Project_7`.
 
 You can also download the binary from any recent build by navigating to the **"Actions"** tab in this repository, selecting the latest run, and scrolling down to the **Artifacts** section.
