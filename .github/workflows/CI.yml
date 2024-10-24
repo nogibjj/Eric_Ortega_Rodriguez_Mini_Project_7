@@ -23,7 +23,7 @@ jobs:
         override: true
 
     - name: Check
-      run: make check
+      run: cargo check # Replaced make check with cargo check
 
     - name: Format
       run: make format
@@ -42,8 +42,6 @@ jobs:
       with:
         name: Eric_Ortega_Rodriguez_Mini_Project_7
         path: data/Eric_Ortega_Rodriguez_Mini_Project_7
-    
-
 
 # name: CI
 
