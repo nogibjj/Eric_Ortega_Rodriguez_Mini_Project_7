@@ -3,8 +3,6 @@
 
 ![alt text](image.png)
 ## Project Overview
-This project involves packaging a tool using Rust. The tool should include a user guide for installation and usage. Additionally, the project includes setting up a Continuous Integration/Continuous Deployment (CI/CD) pipeline that produces the Rust binary as an artifact.
-
 Users can run the tool to multiply two predefined numbers (which can be customized in the code), and the output will display the result of the multiplication. In addition to showcasing the packaging of a Rust tool.
 
 This project also includes a Continuous Integration/Continuous Deployment (CI/CD) pipeline using GitHub Actions. 
