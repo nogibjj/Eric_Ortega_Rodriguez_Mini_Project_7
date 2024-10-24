@@ -26,7 +26,7 @@ To build and run the project, ensure you have the following:
 - **Git**: A Git/github account is needed to clone the repository
 - **CI/CD**: GitHub Actions setup for the CI/CD pipeline
 
-A way to verify if Rust and Cargo are installed by running:
+A way to verify if Rust and Cargo are installed is you can run the following commands:
 ```bash
 rustc --version
 cargo --version
