@@ -1,3 +1,4 @@
+[![CI/CD](https://github.com/nogibjj/Eric_Ortega_Rodriguez_Mini_Project_7/actions/workflows/CI.yml/badge.svg)](https://github.com/nogibjj/Eric_Ortega_Rodriguez_Mini_Project_7/actions/workflows/CI.yml)
 # Week 7 Mini Project: Rust Tool Packaging
 ## Eric Ortega Rodriguez 
 
