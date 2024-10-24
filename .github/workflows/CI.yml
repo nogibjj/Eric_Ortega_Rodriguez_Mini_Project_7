@@ -22,26 +22,62 @@ jobs:
         toolchain: stable
         override: true
 
-    - name: Check
-      run: cargo check # Replaced make check with cargo check
+    - name: Build the project
+      run: cargo build --release  # This builds the Rust project in release mode
 
-    - name: Format
-      run: make format
+    - name: Prepare binary artifact
+      run: mkdir -p data && cp target/release/Eric_Ortega_Rodriguez_Mini_Project_7 ./data/  # Copies the binary to a folder for artifact upload
 
-    - name: Test
-      run: make test
-
-    - name: Release
-      run: cargo build --release
-
-    - name: Artifact upload preparation
-      run: mkdir -p data && cp target/release/Eric_Ortega_Rodriguez_Mini_Project_7 ./data/
-      
-    - name: Upload Binary Artifact to Github
-      uses: actions/upload-artifact@v4
+    - name: Upload binary artifact to GitHub
+      uses: actions/upload-artifact@v4  # This action uploads the artifact
       with:
-        name: Eric_Ortega_Rodriguez_Mini_Project_7
-        path: data/Eric_Ortega_Rodriguez_Mini_Project_7
+        name: Eric_Ortega_Rodriguez_Mini_Project_7  # Artifact name
+        path: data/Eric_Ortega_Rodriguez_Mini_Project_7  # Path to the binary
+
+# name: CI/CD
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
+
+#     - name: Install Rust
+#       uses: actions-rs/toolchain@v1
+#       with:
+#         toolchain: stable
+#         override: true
+
+#     - name: Check
+#       run: cargo check # Replaced make check with cargo check
+
+#     - name: Format
+#       run: make format
+
+#     - name: Test
+#       run: make test
+
+#     - name: Release
+#       run: cargo build --release
+
+#     - name: Artifact upload preparation
+#       run: mkdir -p data && cp target/release/Eric_Ortega_Rodriguez_Mini_Project_7 ./data/
+      
+#     - name: Upload Binary Artifact to Github
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: Eric_Ortega_Rodriguez_Mini_Project_7
+#         path: data/Eric_Ortega_Rodriguez_Mini_Project_7
 
 # name: CI
 
