@@ -1,52 +1,4 @@
-# name: CI/CD
-
-# on:
-#   push:
-#     branches:
-#       - main
-#   pull_request:
-#     branches:
-#       - main
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: Checkout code
-#       uses: actions/checkout@v3
-
-#     - name: Install Rust
-#       uses: actions-rs/toolchain@v1
-#       with:
-#         toolchain: stable
-#         override: true
-
-#     - name: Check
-#       run: make check
-
-#     - name: Format
-#       run: make format
-
-#     - name: Test
-#       run: make test
-
-#     - name: Release
-#       run: cargo build --release
-
-#     - name: 
-#       run: 
-      
-#     - name: 
-#       uses: 
-#       with:
-#         name: 
-#         path: 
-    
-
-
-
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -60,9 +12,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      WORKING_DIR: add #change this to the rust project name you are developing.
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -75,22 +24,72 @@ jobs:
 
     - name: Check
       run: make check
-      working-directory: ${{ env.WORKING_DIR }}
 
     - name: Format
       run: make format
-      working-directory: ${{ env.WORKING_DIR }}
 
     - name: Test
       run: make test
-      working-directory: ${{ env.WORKING_DIR }}
 
     - name: Release
-      run: make release
-      working-directory: ${{ env.WORKING_DIR }}
+      run: cargo build --release
 
-    - name: Upload Binary Artifact
-      uses: actions/upload-artifact@v4 #v3 is scheduled for deprecation Nov 30 2024 check marketplace
+    - name: Artifact upload preparation
+      run: mkdir -p data && cp target/release/Eric_Ortega_Rodriguez_Mini_Project_7 ./data/
+      
+    - name: Upload Binary Artifact to Github
+      uses: actions/upload-artifact@v4
       with:
-        name: release-binary
-        path: ${{ env.WORKING_DIR }}/target/release/minigrep
+        name: Eric_Ortega_Rodriguez_Mini_Project_7
+        path: data/Eric_Ortega_Rodriguez_Mini_Project_7
+    
+
+
+# name: CI
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     env:
+#       WORKING_DIR: add #change this to the rust project name you are developing.
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
+
+#     - name: Install Rust
+#       uses: actions-rs/toolchain@v1
+#       with:
+#         toolchain: stable
+#         override: true
+
+#     - name: Check
+#       run: make check
+#       working-directory: ${{ env.WORKING_DIR }}
+
+#     - name: Format
+#       run: make format
+#       working-directory: ${{ env.WORKING_DIR }}
+
+#     - name: Test
+#       run: make test
+#       working-directory: ${{ env.WORKING_DIR }}
+
+#     - name: Release
+#       run: make release
+#       working-directory: ${{ env.WORKING_DIR }}
+
+#     - name: Upload Binary Artifact
+#       uses: actions/upload-artifact@v4 #v3 is scheduled for deprecation Nov 30 2024 check marketplace
+#       with:
+#         name: release-binary
+#         path: ${{ env.WORKING_DIR }}/target/release/minigrep
