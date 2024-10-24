@@ -13,3 +13,4 @@ This project involves packaging a tool using Rust. The tool should include a use
 To build the Rust project, run:
 ```bash
 cargo build --release
+
